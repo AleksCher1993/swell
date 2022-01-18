@@ -1,0 +1,302 @@
+.header{
+
+}
+.header__container{
+margin: 0 auto;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+    min-height: 64px;
+}
+.menu {
+
+}
+.menu__logo{
+    font-size: 2rem;
+    margin-left: 7px;
+    z-index: 5;
+    flex: 2 3 auto;
+    // border: 1px solid black;
+}
+.menu__logo a:before{
+    color: #550088;
+
+}
+.menu__icon {
+    display: none;
+}
+.menu__body {
+    flex: 2 1 auto;
+    // border: 1px solid black;
+}
+.menu__list {
+
+}
+.menu__list>li {
+    position: relative;
+    margin: 0px 61px 0px 0px;
+    font-family: "Roboto";
+    // border: 1px solid black;
+    flex: 0 0 auto;
+    @media (max-width:991.98px) {
+        margin: 0px 31px 0px 0px;
+        
+    }
+}
+.menu__list>li a{
+    color: $mainColor;
+    font-size: 1rem;
+}
+
+.menu__list>li:nth-child(5){
+    margin: 0px;
+    justify-content: flex-end;
+    margin-right: 28px;
+    flex: 4 0 auto;
+    text-align: end;
+    @media (max-width:991.98px) {
+        margin-right: 15px;
+        
+    }
+}
+.menu__list>li:nth-child(5) a{
+    flex: 0 0 auto;
+}
+.menu__list>li:last-child{
+    margin: 0px 0px 0px 0px;
+    flex: 0 1 auto;
+    border: 1px solid #550088;
+border-radius: 4px;
+margin-right: 5px;
+text-align: center;
+
+}
+.menu__list>li:last-child a{
+    display: inline-block;
+    height: 40px;
+    width: 80px;
+    line-height: 2.5;
+    
+}
+
+.menu__link {
+    
+    font-size: 18px;
+}
+.menu__link:hover{
+    text-decoration: underline;
+}
+.menu_arrow{
+    display: none;
+}
+.menu__sub-list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #000;
+    padding: 15px;
+    min-width: 200px;
+
+}
+.menu__sub-list li{
+margin: 0px 0px 10px 0px;
+}
+.menu__sub-list li:last-child{
+    margin: 0;
+}
+.menu__sub-link {
+    color: #fff;
+}
+.menu__sub-link:hover {
+    text-decoration: underline;
+}
+
+
+// ---------------------------------
+body._pc .menu__list >li:hover .menu__sub-list{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px,0px);
+    pointer-events: all;//запрещает любое взаимодействие мыши с нашим обьектом
+} 
+body._touch .menu__list >li{
+    display: flex;
+    align-items: center;
+}
+body._touch .menu_arrow{
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0px 0px 0px 5px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #fff;
+    transition: transform 0.3s ease 0s;
+
+}
+body._touch .menu__link{
+    flex: 1 1 auto;
+}
+body._touch .menu__list >li._active .menu__sub-list{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px,0px);
+    pointer-events: all;//запрещает любое взаимодействие мыши с нашим обьектом
+} 
+body._touch .menu__list >li._active .menu_arrow{
+    transform: rotate(180deg);
+}
+// ---------------------------------
+
+@media(min-width:767.98px){
+    
+    .menu__list {
+        display: flex;
+        align-items: center;
+    }
+    .menu__list>li>a:hover{
+        color: #550088;
+        text-decoration: none;
+    }
+
+    .menu__list>li:last-child:hover a{
+        background: linear-gradient(180deg, #550088 30.21%, #7800BF 66.15%, #892FFC 100%);
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease 0s;
+
+    }
+    .menu__sub-list{
+        transform: translate(0px,10px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;//запрещает любое взаимодействие мыши с нашим обьектом
+        transition: all 0.3s ease 0s;
+    }
+}
+@media (max-width:767.98px) {
+    .menu{
+position: fixed;
+    }
+.menu__logo{
+}
+    .menu__icon{
+        z-index: 5;
+        display: block;
+        position: fixed;
+        width: 30px;
+        height: 18px;
+        margin-right: 10px;
+        right: 0;
+        cursor: pointer;
+        
+    }
+
+    .menu__icon span,
+    .menu__icon::before,
+    .menu__icon::after{
+        left: 0;
+        position: absolute;
+        height: 10%;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        background-color: black;
+    }
+    .menu__icon::before,
+    .menu__icon::after{content: "";}
+    .menu__icon::before{
+        top: 0;
+    }
+    .menu__icon::after{
+        bottom: 0;
+    }
+    .menu__icon span{
+        top: 50%;
+
+        transform: scale(1) translate(0px,-50%);
+    }
+    .menu__icon._active span{
+        transform: scale(0) translate(0px,-50%) ;
+    }
+    .menu__icon._active::before{
+        top: 50%;
+        transform: rotate(-45deg) translate(0px,-50%) ;
+    }
+    .menu__icon._active::after{
+        bottom: 50%;
+        transform: rotate(45deg) translate(0px,50%) ;
+    }
+    .menu__body{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: white, $alpha: 0.95);
+        padding: 100px 30px 30px 30px;
+        transition: left 0.3s ease 0s;
+        overflow: auto;
+    }
+    .menu__body._active{
+        left: 0;
+    }
+    .menu__body::before{
+content: "";
+position: fixed;
+width: 100%;
+top: 0;
+left: 0;
+height: 70px;
+background-color: white;
+z-index: 2;
+box-shadow: 0 1px 10px 0px gray;
+}
+    
+    .menu__list>li{
+        flex-wrap: wrap;
+        margin: 0px 0px 30px 0px;
+        text-align: center;
+    }
+    .menu__list>li a{
+        color: $mainColor;
+        font-size: 2rem;
+        
+    }
+    .menu__list>li:nth-child(5){
+        margin: 0px 0px 30px 0px;
+
+        justify-content: center;
+    }
+    .menu__list>li:nth-child(5) a{
+        width: 100%;
+    }
+    .menu__list>li:last-child{
+        margin-bottom: 0px;
+    }
+    .menu__list>li:last-child a{
+        width: 100%;
+        height: 100%;
+    }
+    .menu__list >li._active .menu__sub-list{
+        display: block;
+    }
+    .menu__link{
+    color: white;
+text-align: center;
+}
+.menu__sub-list{
+position: relative;
+background-color: #fff;
+text-align: left;
+
+flex: 1 1 100%;
+margin: 20px 0px 0px 0px;
+display: none;
+}
+.menu__sub-link{
+    font-size: 20px;
+    color: black;
+}
+}

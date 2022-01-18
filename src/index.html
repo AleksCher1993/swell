@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/_head.html',{ "title":"swell" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.html',{"link":"0"})
+      <main class="page">
+        @@include('html/sections/sectionMain.html',{})
+        @@include('html/sections/sectionTable.html',{})
+        @@include('html/sections/sectionCards.html',{})
+      </main>
+      @@include('html/_footer.html',{})
+    </div>
+    <!--не удалять этот скрипт-->
+    @@include('html/_js.html',{})
+  </body>
+</html>

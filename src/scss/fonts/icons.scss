@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'icons';
+  src:
+    url('../fonts/icons.ttf?woip7w') format('truetype'),
+    url('../fonts/icons.woff?woip7w') format('woff'),
+    url('../fonts/icons.svg?woip7w#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="_icon-"]::before, [class*=" _icon-"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-shoify:before {
+  content: "\e90e";
+}
+._icon-Frame:before {
+  content: "\e902";
+}
+._icon-great:before {
+  content: "\e903";
+}
+._icon-spinn:before {
+  content: "\e904";
+}
+._icon-pipl:before {
+  content: "\e905";
+}
+._icon-smilo:before {
+  content: "\e906";
+}
+._icon-nowvac:before {
+  content: "\e907";
+}
+._icon-circle:before {
+  content: "\e908";
+}
+._icon-dress:before {
+  content: "\e909";
+}
+._icon-ring:before {
+  content: "\e90a";
+}
+._icon-time:before {
+  content: "\e90b";
+}
+._icon-bigcommerce:before {
+  content: "\e90c";
+}
+._icon-magento:before {
+  content: "\e90d";
+}
+._icon-swell:before {
+  content: "\e900";
+}
+._icon-active:before {
+  content: "\e901";
+}

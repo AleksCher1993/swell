@@ -1,0 +1,50 @@
+<!-- 111111111111111111111111111111111111 -->
+<!-- для одностраничников плавный переход -->
+<!-- data-goto=".page__section_1 атрибут обязателен для ссылок. Для секций куда нужно плавно скролить установить класс page__section_1 -->
+<!-- 222222222222222222222222222222222222222 -->
+<!-- для многостраничников -->
+<!-- <a href="../about.html"class="menu__link @@if(link==1){_active}">Раздел1</a>  установить условие. Для другой страницы установить-->
+
+<div class="header__menu menu">
+  <div class="menu__icon">
+    <span></span>
+  </div>
+  <nav class="menu__body">
+    <ul class="menu__list">
+      <li>
+        <a
+          data-goto=".page__section_1"
+          href="#"
+          class="menu__link @@if(link==1){_active}"
+          >Раздел1</a
+        >
+      </li>
+      <li>
+        <a
+          data-goto=".page__section_2"
+          href="#"
+          class="menu__link @@if(link==2){_active}"
+          >Раздел2</a
+        >
+      </li>
+      <li>
+        <a
+          data-goto=".page__section_3"
+          href="#"
+          class="menu__link @@if(link==3){_active}"
+          >Раздел3</a
+        >
+      </li>
+      <li>
+        <a href="" class="menu__link">Страница1</a>
+        <span class="menu_arrow"></span>
+        <ul class="menu__sub-list">
+          <li><a href="" class="menu__sub-link">Раздел1 страницы1</a></li>
+          <li><a href="" class="menu__sub-link">Раздел2 страницы1</a></li>
+          <li><a href="" class="menu__sub-link">Раздел3 страницы1</a></li>
+        </ul>
+      </li>
+      <li><a href="" class="menu__link">Страница2</a></li>
+    </ul>
+  </nav>
+</div>
